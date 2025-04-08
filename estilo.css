@@ -1,0 +1,78 @@
+
+       body{ 
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+                        
+        }
+       #topo{
+            background: #EEE9DD;
+            padding: 1em;
+            width: 100vw;
+            height: 10vh;
+                        
+        }
+
+        #logo{
+            height: 100%;
+        }
+
+        a{
+            
+            text-decoration: none;
+            color: #3E5673;
+            padding: 0.5em;
+                                             
+        }
+
+        a:hover{
+            border-radius: 12px;
+            background-color: #3E5673;
+            color: #EEE9DD;
+        }
+
+        #areaBanner{
+            border: 5px solid #EEE9DD;
+            background: #EEE9DD; 
+            padding: 1em 1em;
+                
+        }
+
+        video{
+            border: 5px solid #EEE9DD;
+            padding: 1em 1em;
+            width: 100vw;
+            height: 100vh;                  
+        }
+
+        #corpo{
+            background: #EEE9DD;
+            padding: 1em 2em; 
+                      
+        }
+
+        h1,h2,p{
+            font-family: american typewritfer, serif ;
+            color: #3E5673;
+             
+        }
+
+        .destaque{
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #3E5673;
+        }
+        
+        p~a{
+            border-style: solid;
+            border-color: #3e5673;
+            border-radius: 5px;
+        }
+
+        #rodape{
+            background: #3E5673;
+            color: #CECFCD;
+            padding: 10px 100px;
+        }
+
+    
