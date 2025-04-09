@@ -14,6 +14,7 @@
         }
 
         #logo{
+            width: 8vw;
             height: 100%;
         }
 
@@ -73,6 +74,11 @@
             background: #3E5673;
             color: #CECFCD;
             padding: 10px 100px;
+        }
+
+        img{
+            width: 100vw;
+            height: 100vh;
         }
 
     
