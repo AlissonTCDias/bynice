@@ -1,11 +1,89 @@
+/*Estrutura Layout*/
+.container {
+    border: 1px solid red;
+    display: grid;
+    max-width: 1400px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "cabecalho cabecalho"
+        "banner banner"
+        "conteudo conteudo"
+        "rodape rodape";
 
-       body{ 
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-                        
-        }
-       #topo{
+
+}
+
+.logo {
+    border: 1px solid red;
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.botao {
+    text-decoration: none;
+    color: #0B5cff;
+    border: 2px solid #0B5cff;
+    border-radius: 25px;
+    padding: 5px 30px;
+    align-self: flex-end;   /*alinhamento do botão*/
+}
+
+.botao.destaque {
+    background-color: #0B5cff;
+    color: white;
+}
+
+.botao:hover {
+    background-color: #d2e1ff;
+}
+
+.botao.destaque:hover {
+    background-color: #2d73ff;
+}
+
+nav {
+    border: 1px solid red;
+    flex-grow: 1;
+}
+nav ul {
+    border: 1px solid red;
+    display: flex;
+    list-style: none;
+}
+nav.menu > ul > li > a {
+    border: 1px solid red;
+    text-decoration: none;
+    
+}
+
+header {
+    border: 1px solid red;
+    grid-area: cabecalho;
+    display: flex;/*Definiu o header como container*/ 
+    align-items: center;
+    padding: 0 10px;/*aplicou o padding so nas laterais*/
+}
+
+section.banner > img {
+    width: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+     /*  #topo{
             background: #EEE9DD;
             padding: 1em;
             width: 100vw;
@@ -75,4 +153,4 @@
             padding: 10px 100px;
         }
 
-    
+    */
