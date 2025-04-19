@@ -1,156 +1,278 @@
-/*Estrutura Layout*/
-.container {
-    border: 1px solid red;
-    display: grid;
-    max-width: 1400px;
+* {
+    ox-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #28364B;
+
+  }
+  
+  .container {
+    max-width: 1480px;
     margin: 0 auto;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-        "cabecalho cabecalho"
-        "banner banner"
-        "conteudo conteudo"
-        "rodape rodape";
-
-
-}
-
-.logo {
-    border: 1px solid red;
-    width: 100px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.botao {
-    text-decoration: none;
-    color: #0B5cff;
-    border: 2px solid #0B5cff;
-    border-radius: 25px;
-    padding: 5px 30px;
-    align-self: flex-end;   /*alinhamento do botão*/
-}
-
-.botao.destaque {
-    background-color: #0B5cff;
-    color: white;
-}
-
-.botao:hover {
-    background-color: #d2e1ff;
-}
-
-.botao.destaque:hover {
-    background-color: #2d73ff;
-}
-
-nav {
-    border: 1px solid red;
-    flex-grow: 1;
-}
-nav ul {
-    border: 1px solid red;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "topo"
+      "conteudo1"
+      "conteudo2"
+      "conteudo3"
+      "conteudo4";
+    row-gap: 20px;
+  }
+  
+  header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: url(img/madrinhas\ banner\ 1.jpg) no-repeat center;
+    background-size: cover;
+    height: 600px;
+    padding: 0 40px;
+    grid-area: topo;
+  }
+  
+  /* TOPO: logo à esquerda | menu centro | entrar à direita */
+  .topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 20px 0;
+    width: 100%;
+  }
+  
+  .logo img {
+    padding: 0;
+    margin: 0;
+    width: 120px;
+  }
+  
+  /* Hover agrupado apenas no menu e botão entrar */
+  /*.topo:hover .menu,
+  .topo:hover .entrar {
+    background-color: #CEAD8C;
+    transition: background-color 0.3s ease;
+  }*/
+  
+  /* Menu centralizado */
+  .menu {
+    display: flex;
+    justify-content: left;
+    flex: 1;
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .menu ul {
     display: flex;
     list-style: none;
-}
-nav.menu > ul > li > a {
-    border: 1px solid red;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu ul li a {
     text-decoration: none;
+    color: #28364B;
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover no link individual (opcional além do bloco) */
+  .menu ul li a:hover {
+    background-color: #28364B;
+    color: #CEAD8C;
+    border-radius: 5px;
     
-}
+  }
+  
+  .entrar {
+    font-size: 1.1rem;
+    padding: 10px;      
+  }
+  
+  .entrar a {
+    text-decoration: none;
+    color: #28364B;
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: background-color 0.3s ease;    
+  }
+  
+  .entrar a:hover {
+    background-color: #28364B;
+    color: #CEAD8C;
+    border-radius: 5px;
+  }
+  
+  /* Botão "Compre agora" na parte inferior esquerda */
+  .botao.compre {
+    align-self: flex-start;
+    margin-top: auto;
+    margin-left: 240px;
+    margin-bottom: 40px;
+    background-color: transparent;
+    border: 2px solid #28364B;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+  
+  .botao.compre a {
+    text-decoration: none;
+    color: #28364B;
+    padding: 8px 25px;
+    display: inline-block;
+  }
+  
+  .botao.compre a:hover {
+    background-color: #28364B;
+    color: #CEAD8C;
+  }
+  
+  
+  /*para as sesoes*/
 
-header {
-    border: 1px solid red;
-    grid-area: cabecalho;
-    display: flex;/*Definiu o header como container*/ 
+/* Seções empilhadas verticalmente */
+section[class^="conteudo"] {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 0 10px;/*aplicou o padding so nas laterais*/
-}
+    padding: 40px 0;
+  }
+  
+  section[class^="conteudo"] .linha-produtos {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Espaçamento entre produtos */
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1400px;
+  }
+  
+  section[class^="conteudo"] .produto {
+    width: 30%;
+    border: 2px solid #28364B;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  section[class^="conteudo"] .produto img {
+    width: 100%;
+    max-height: 400px; /* Aumentei */
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  /* Efeito de zoom ao passar o mouse */
+  section[class^="conteudo"] .produto:hover img {
+    transform: scale(1.1);
+  }
+  
+  section[class^="conteudo"] .produto .info {
+    /* Remover sticky */
+    position: sticky;
+    top: unset;
+    background: white;
+    width: 100%;
+    text-align: left;
+    z-index: 1;
+    padding: 10px 0;
+  }
+  
+  section[class^="conteudo"] .produto h4,
+  section[class^="conteudo"] .produto p {
+    margin-bottom: 5px;
+    padding: 0 10px;
+  }
+  
+  section[class^="conteudo"] .produto button {
+    margin: 10px 10px 0;
+    padding: 8px 16px;
+    background-color: #28364B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto; /* Não ocupar 100% */
+    text-align: left;
+  }
+  
 
-section.banner > img {
-    width: 600px;
-}
+  
+  footer {
+    background: #f2f2f2;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 60px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+   /* ESTILOS RESPONSIVOS ADICIONADOS */
+   @media (max-width: 768px) {
+    header {
+      height: auto;
+      padding: 20px;
+      background-position: center;
+    }
 
+    .topo {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
 
+    .menu {
+      padding: 10px;
+      width: 100%;
+    }
 
+    .menu ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
 
+    .entrar {
+      padding: 10px 0;
+    }
 
+    .botao.compre {
+      margin: 20px auto;
+      text-align: center;
+    }
 
+    .botao.compre a {
+      padding: 10px 20px;
+    }
 
+    .container {
+      padding: 0 10px;
+    }
 
-
-
-
-
-
-       
-     /*  #topo{
-            background: #EEE9DD;
-            padding: 1em;
-            width: 100vw;
-            height: 10vh;
-                        
-        }
-
-        #logo{
-            height: 100%;
-        }
-
-        a{
-            
-            text-decoration: none;
-            color: #3E5673;
-            padding: 0.5em;
-                                             
-        }
-
-        a:hover{
-            border-radius: 12px;
-            background-color: #3E5673;
-            color: #EEE9DD;
-        }
-
-        #areaBanner{
-            border: 5px solid #EEE9DD;
-            background: #EEE9DD; 
-            padding: 1em 1em;
-                
-        }
-
-        video{
-            border: 5px solid #EEE9DD;
-            padding: 1em 1em;
-            width: 100vw;
-            height: 100vh;                  
-        }
-
-        #corpo{
-            background: #EEE9DD;
-            padding: 1em 2em; 
-                      
-        }
-
-        h1,h2,p{
-            font-family: american typewritfer, serif ;
-            color: #3E5673;
-             
-        }
-
-        .destaque{
-            text-transform: uppercase;
-            font-weight: bold;
-            color: #3E5673;
-        }
-        
-        p~a{
-            border-style: solid;
-            border-color: #3e5673;
-            border-radius: 5px;
-        }
-
-        #rodape{
-            background: #3E5673;
-            color: #CECFCD;
-            padding: 10px 100px;
-        }
-
-    */
+    section[class^="conteudo"] .linha-produtos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      section[class^="conteudo"] .produto {
+        width: 100%;
+      }
+      
+   }  
+  /* FIM DOS ESTILOS RESPONSIVOS */
